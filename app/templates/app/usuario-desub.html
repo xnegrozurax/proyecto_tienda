@@ -1,0 +1,79 @@
+{%extends 'app/base.html'%}
+{%load static%}
+
+{% block contenido %}
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <div class="container-fluid align-self-center">
+            <a class="navbar-brand" href="#"><img src="{%static 'app/img/sakura.gif'%}f" alt="" width="50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <h3 class="nombre-tienda"></h3>
+            <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
+                <ul class="navbar-nav producto">
+                    <li class="nav-item">
+                        <a class="nav-link mt-3" href="{%url 'usuario-sub'%}"><i class="fa-solid fa-user"></i>Perfil</a>  
+                    <li class="nav-item">
+                        <a class="nav-link mt-3" href="{%url 'Seguimiento'%}"><i class="fa-solid fa-truck" ></i>  Seguimiento</a>    
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mt-3" href="{%url 'Carrito'%}"><i class="fa-solid fa-cart-shopping"></i>  Carrito</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle mt-3" href="{%url 'productos'%}" role="button" data-bs-toggle="dropdown">Productos</a>
+      
+
+
+
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Flores</a></li>
+                          <li><a class="dropdown-item" href="#">Adornos</a></li>
+                          <li><a class="dropdown-item" href="#">Semillas</a></li>
+                          <li><a class="dropdown-item" href="#">Herramientas</a></li>
+                        </ul>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link mt-3" href="{%url 'index'%}"><i class="fa-solid fa-right-from-bracket"></i>  Cerrar Sesion</a> 
+                </ul>
+                <form class="d-flex mb-0 mt-3">
+                    <input class="form-control me-2" type="text" placeholder="Buscar"><i class="bi bi-search"></i>
+                    <button class="btn btn-primary" type="button">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <h2 class="subtitulo mt-5 text-white">Cuenta</h2>
+        <div class="container tabla mt-3">
+            <h4>Detalles</h4>
+            <p>A continuación se muestran los detalles de su cuenta:</p>            
+            <table class="datos-tabla text-white">
+              
+              <tbody>
+                <tr>
+                  <th>Nombre usuario:</th>
+                  <td class="text-white">Juanito</td>
+                  <td>                    </td>
+                </tr>
+                <tr>
+                  <th>E-mail:</th>
+                  <td>juanito@gmail.com</td>
+                  <td>                    </td>
+                </tr>
+                <tr>
+                  <th>Teléfono:</th>
+                  <td>+56987654321</td>
+                  <td>                    </td>
+                </tr>
+                <tr>
+                    <th><button type="button" class="btn btn-danger">Desuscribirse</button></th>
+                    <td>Cancelar la suscripción conlleva a la perdida de los descuentos</td>
+                    <td>                    </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+    
+{%endblock%}      
